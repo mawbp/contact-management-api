@@ -96,6 +96,7 @@ Access the API at `http://localhost:8000`.
 ## API Specification
 
 ### User Endpoints
+Endpoints for user registration, authentication, profile management, and logout. All user-related actions are handled here.
 
 #### User Registration
 
@@ -193,6 +194,7 @@ Authorization: <auth_token>
 }
 ```
 ### Contact Endpoints
+Endpoints for managing contacts, including creating, searching, updating, retrieving, and deleting contact records. Requires authentication.
 
 #### Create Contact (Auth Required)
 
@@ -294,6 +296,7 @@ Authorization: <auth_token>
 }
 ```
 ### Adress Endpoints
+Endpoints for managing addresses associated with contacts. Includes adding, listing, updating, retrieving, and deleting addresses for a specific contact. Requires Authentication
 
 #### Add Address to Contact (Auth Required)
 
