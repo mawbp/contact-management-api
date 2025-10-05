@@ -217,19 +217,22 @@ Content-Type: application/json
 ```
 ```json
 {
-    "name": "Alice",
-    "phone": "1234567890",
-    "email": "alice@example.com"
+    "first_name": "Eddard",
+    "last_name": "Stark",
+    "email": "eddard@winterfell.com",
+    "phone": "1234567"
 }
 ```
 Response
 ```json
 {
-    "id": 1,
-    "name": "Alice",
-    "phone": "1234567890",
-    "email": "alice@example.com",
-    "created_at": "2024-06-01T12:00:00.000000Z"
+  "data": {
+    "id": 628,
+    "first_name": "Eddard",
+    "last_name": "Stark",
+    "email": "eddard@winterfell.com",
+    "phone": "1234567"
+  }
 }
 ```
 
