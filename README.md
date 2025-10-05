@@ -1,5 +1,33 @@
 # Contact Management Backend API
 
+## Table of Contents
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [API Specification](#api-specification)
+    - [User Endpoints](#user-endpoints)
+        - [User Registration](#user-registration)
+        - [User Login](#user-login)
+        - [Get Current User](#get-current-user-auth-required)
+        - [Update Current User](#update-current-user-auth-required)
+        - [Logout](#logout-auth-required)
+    - [Contact Endpoints](#contact-endpoints)
+        - [Create Contact](#create-contact-auth-required)
+        - [List/Search Contacts](#listsearch-contacts-auth-required)
+        - [Get Contact by ID](#get-contact-by-id-auth-required)
+        - [Update Contact by ID](#update-contact-by-id-auth-required)
+        - [Delete Contact by ID](#delete-contact-by-id-auth-required)
+    - [Address Endpoints](#address-endpoints)
+        - [Add Address to Contact](#add-address-to-contact-auth-required)
+        - [List Addresses for Contact](#list-addresses-for-contact-auth-required)
+        - [Get Address by ID for Contact](#get-address-by-id-for-contact-auth-required)
+        - [Update Address by ID for Contact](#update-address-by-id-for-contact-auth-required)
+        - [Delete Address by ID for Contact](#delete-address-by-id-for-contact-auth-required)
+- [License](#license)
+
 A simple Laravel project to learn and implement RESTful API concepts.
 
 ## Features
