@@ -1,0 +1,364 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Contact API",
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000",
+        "description": "Local Server"
+      }
+    ],
+
+    "paths": {
+      "/api/contacts": {
+        "post": {
+          "summary": "Create new contact",
+          "description": "Create new contact",
+          "parameters": [
+            {
+                "name": "Authorization",
+                "in": "header",
+                "required": true,
+                "schema":{
+                  "type": "string"
+                }
+            }
+          ],
+          "requestBody": {
+            "description": "Create new contact",
+            "content": {
+              "application/json": { 
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201":{
+              "description": "Success create contact",
+              "content": {
+                "application/json":{
+                  "schema":{
+                    "type": "object",
+                    "properties": {
+                      "data":{
+                        "type": "object",
+                        "properties": {
+                          "id":{
+                            "type": "number"
+                          },
+                          "first_name":{
+                            "type": "string"
+                          },
+                          "last_name":{
+                            "type": "string"
+                          },
+                          "email":{
+                            "type": "string"
+                          },
+                          "phone":{
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "errors":{
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "description": "Search contact",
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "phone",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "email",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "size",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success search contact",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id":{
+                              "type": "number"
+                            },
+                            "first_name":{
+                              "type": "string"
+                            },
+                            "last_name":{
+                              "type": "string"
+                            },
+                            "email":{
+                              "type": "string"
+                            },
+                            "phone":{
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "errors": {
+                        "type": "object"
+                      },
+                      "meta": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/contacts/{id}": {
+        "put": {
+          "description": "Update contact",
+          "parameters": [
+            {
+                "name": "Authorization",
+                "in": "header",
+                "schema":{
+                  "type": "string"
+                }
+            },
+            {
+                "name": "id",
+                "in": "path",
+                "schema":{
+                  "type": "string"
+                },
+                "required": true
+            }
+          ],
+          "requestBody": {
+            "description": "Update contact",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success update contact",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "first_name": {
+                            "type": "string"
+                          },
+                          "last_name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "errors": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "description": "Get contact",
+          "parameters": [
+            {
+                "name": "Authorization",
+                "in": "header",
+                "schema":{
+                  "type": "string"
+                }
+            },
+            {
+                "name": "id",
+                "in": "path",
+                "schema":{
+                  "type": "string"
+                },
+                "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success get contact",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "first_name": {
+                            "type": "string"
+                          },
+                          "last_name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "errors": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        },
+        "delete": {
+          "description": "Delete contact",
+          "parameters": [
+            {
+                "name": "Authorization",
+                "in": "header",
+                "schema":{
+                  "type": "string"
+                }
+            },
+            {
+                "name": "id",
+                "in": "path",
+                "schema":{
+                  "type": "string"
+                },
+                "required": true
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success delete contact",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "boolean"
+                      },
+                      "errors": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}

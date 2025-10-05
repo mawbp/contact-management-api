@@ -1,0 +1,130 @@
+### Register User API
+POST http://localhost:8000/api/users/
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "12345",
+    "name": "Test"
+}
+
+### Login User API
+POST http://localhost:8000/api/users/login
+Content-Type: application/json
+
+{
+    "username": "jon",
+    "password": "12345"
+}
+
+### Get Current User API
+GET http://localhost:8000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+
+### Update Current User API
+PATCH http://localhost:8000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+
+{
+    "name": "Jon Targaryen"
+}
+
+### Logout User API
+DELETE http://localhost:8000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+
+### Create Contact API
+POST http://localhost:8000/api/contacts HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+{
+    "first_name": "Eddard",
+    "last_name": "Stark",
+    "email": "bran@winterfell.com",
+    "phone": "1234567"
+}
+
+### GET Contact API #622
+GET http://localhost:8000/api/contacts/622 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+### Create Contact API #622
+PUT http://localhost:8000/api/contacts/622 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+{
+    "first_name": "Arya",
+    "last_name": "Stark",
+    "email": "bran@winterfell.com",
+    "phone": "1234567"
+}
+
+### Delete Contact API #622
+DELETE http://localhost:8000/api/contacts/622 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+### Search Contact API
+GET http://localhost:8000/api/contacts?email=bran HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+### Create Adress API
+POST http://localhost:8000/api/contacts/623/addresses HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+{
+    "street": "Kingsroad",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
+}
+
+### Get Adress API #41
+GET http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+### Update Adress API #41
+PUT http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+{
+    "street": "Nightwatch",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
+}
+
+### Remove Adress API #41
+DELETE http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
+
+### List Adress API #41
+GET http://localhost:8000/api/contacts/623/addresses HTTP/1.1
+Content-Type: : application/json
+Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Accept: application/json
