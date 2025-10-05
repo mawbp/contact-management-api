@@ -3,7 +3,7 @@ POST http://localhost:8000/api/users/
 Content-Type: application/json
 
 {
-    "username": "test",
+    "username": "sod",
     "password": "12345",
     "name": "Test"
 }
@@ -21,13 +21,13 @@ Content-Type: application/json
 GET http://localhost:8000/api/users/current
 Content-Type: application/json
 Accept: application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: bd0afdac-d62d-4d9a-a9a2-a29067c50f10
 
 ### Update Current User API
 PATCH http://localhost:8000/api/users/current
 Content-Type: application/json
 Accept: application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: bd0afdac-d62d-4d9a-a9a2-a29067c50f10
 
 {
     "name": "Jon Targaryen"
@@ -37,12 +37,12 @@ Authorization: 73e05953-17dd-4af9-826c-955e17a18001
 DELETE http://localhost:8000/api/users/logout
 Content-Type: application/json
 Accept: application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 690179a0-624b-43d7-8081-1a18556f8494
 
 ### Create Contact API
 POST http://localhost:8000/api/contacts HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: e96f0ff4-31b6-495e-a4be-55734f73fd02
 Accept: application/json
 
 {
@@ -55,13 +55,13 @@ Accept: application/json
 ### GET Contact API #622
 GET http://localhost:8000/api/contacts/622 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 ### Create Contact API #622
 PUT http://localhost:8000/api/contacts/622 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 {
@@ -74,19 +74,19 @@ Accept: application/json
 ### Delete Contact API #622
 DELETE http://localhost:8000/api/contacts/622 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 ### Search Contact API
 GET http://localhost:8000/api/contacts?email=bran HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 ### Create Adress API
 POST http://localhost:8000/api/contacts/623/addresses HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 {
@@ -100,13 +100,13 @@ Accept: application/json
 ### Get Adress API #41
 GET http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 ### Update Adress API #41
 PUT http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 {
@@ -120,11 +120,11 @@ Accept: application/json
 ### Remove Adress API #41
 DELETE http://localhost:8000/api/contacts/623/addresses/41 HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json
 
 ### List Adress API #41
 GET http://localhost:8000/api/contacts/623/addresses HTTP/1.1
 Content-Type: : application/json
-Authorization: 73e05953-17dd-4af9-826c-955e17a18001
+Authorization: 645586c9-252a-46b7-b187-752229bbe34a
 Accept: application/json

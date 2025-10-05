@@ -106,18 +106,19 @@ Content-Type: application/json
 ```
 ```json
 {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "password": "yourpassword"
+    "username": "jon",
+    "password": "mypassword",
+    "name": "Jon Snow"
 }
 ```
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "name": "John Doe",
-    "email": "john@example.com",
-    "created_at": "2024-06-01T12:00:00.000000Z"
+    "username": "jon",
+    "name": "Jon Snow"
+  }
 }
 ```
 
@@ -130,14 +131,19 @@ Content-Type: application/json
 ```
 ```json
 {
-    "email": "john@example.com",
-    "password": "yourpassword"
+    "username": "jon",
+    "password": "mypassword"
 }
 ```
 Response
 ```json
 {
+  "data": {
+    "id": 1,
+    "username": "jon",
+    "name": "Jon Snow",
     "token": "<auth_token>"
+  }
 }
 ```
 
@@ -151,9 +157,12 @@ Authorization: <auth_token>
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "name": "John Doe",
-    "email": "john@example.com"
+    "username": "jon",
+    "name": "Jon Snow",
+    "token": "bd0afdac-d62d-4d9a-a9a2-a29067c50f10"
+  }
 }
 ```
 
@@ -167,15 +176,18 @@ Content-Type: application/json
 ```
 ```json
 {
-    "name": "Jane Doe"
+    "name": "Jon Targaryen"
 }
 ```
 Response
 ```json
 {
-    "id": 1,
-    "name": "Jane Doe",
-    "email": "john@example.com"
+  "data": {
+    "id": 453,
+    "username": "jon",
+    "name": "Jon Targaryen",
+    "token": "bd0afdac-d62d-4d9a-a9a2-a29067c50f10"
+  }
 }
 ```
 
@@ -189,7 +201,7 @@ Authorization: <auth_token>
 Response
 ```json
 {
-    "message": "Logged out successfully."
+    "data": true
 }
 ```
 ### Contact Endpoints
