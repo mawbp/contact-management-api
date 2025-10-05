@@ -98,7 +98,7 @@ Access the API at `http://localhost:8000`.
 ### User Endpoints
 Endpoints for user registration, authentication, profile management, and logout. All user-related actions are handled here.
 
-#### User Registration
+### User Registration
 
 **Request**
 ```
