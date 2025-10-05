@@ -183,7 +183,7 @@ Response
 ```json
 {
   "data": {
-    "id": 453,
+    "id": 1,
     "username": "jon",
     "name": "Jon Targaryen",
     "token": "bd0afdac-d62d-4d9a-a9a2-a29067c50f10"
@@ -227,7 +227,7 @@ Response
 ```json
 {
   "data": {
-    "id": 628,
+    "id": 1,
     "first_name": "Eddard",
     "last_name": "Stark",
     "email": "eddard@winterfell.com",
@@ -245,14 +245,49 @@ Authorization: <auth_token>
 ```
 Response
 ```json
-[
+{
+  "data": [
     {
         "id": 1,
-        "name": "Alice",
-        "phone": "1234567890",
-        "email": "alice@example.com"
+        "first_name": "Eddard",
+        "last_name": "Stark",
+        "email": "eddard@winterfell.com",
+        "phone": "1234567"
     }
-]
+  ],
+  "links": {
+    "first": "http:\/\/localhost:8000\/api\/contacts?page=1",
+    "last": "http:\/\/localhost:8000\/api\/contacts?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "active": false
+      },
+      {
+        "url": "http:\/\/localhost:8000\/api\/contacts?page=1",
+        "label": "1",
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "active": false
+      }
+    ],
+    "path": "http:\/\/localhost:8000\/api\/contacts",
+    "per_page": 10,
+    "to": 1,
+    "total": 1
+  }
+}
 ```
 
 #### Get Contact by ID (Auth Required)
@@ -265,10 +300,13 @@ Authorization: <auth_token>
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "name": "Alice",
-    "phone": "1234567890",
-    "email": "alice@example.com"
+    "first_name": "Eddard",
+    "last_name": "Stark",
+    "email": "eddard@winterfell.com",
+    "phone": "1234567"
+  }
 }
 ```
 
@@ -282,17 +320,22 @@ Content-Type: application/json
 ```
 ```json
 {
-    "name": "Alice Updated",
-    "phone": "0987654321"
+    "first_name": "Eddard (updated)",
+    "last_name": "Stark",
+    "email": "bran@winterfell.com",
+    "phone": "1234567"
 }
 ```
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "name": "Alice Updated",
-    "phone": "0987654321",
-    "email": "alice@example.com"
+    "first_name": "Eddard (updated)",
+    "last_name": "Stark",
+    "email": "eddard@winterfell.com",
+    "phone": "1234567"
+  }
 }
 ```
 
@@ -306,7 +349,7 @@ Authorization: <auth_token>
 Response
 ```json
 {
-    "message": "Contact deleted successfully."
+    "data": true
 }
 ```
 ### Adress Endpoints
@@ -322,20 +365,24 @@ Content-Type: application/json
 ```
 ```json
 {
-    "street": "123 Main St",
-    "city": "Metropolis",
+    "street": "Kingsroad",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
     "postal_code": "12345"
 }
 ```
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "street": "123 Main St",
-    "city": "Metropolis",
-    "postal_code": "12345",
-    "contact_id": 1,
-    "created_at": "2024-06-01T12:00:00.000000Z"
+    "street": "Kingsroad",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
+  }
 }
 ```
 
@@ -348,15 +395,18 @@ Authorization: <auth_token>
 ```
 Response
 ```json
-[
+{
+  "data": [
     {
-        "id": 1,
-        "street": "123 Main St",
-        "city": "Metropolis",
-        "postal_code": "12345",
-        "contact_id": 1
+      "id": 1,
+      "street": "Kingsroad",
+      "city": "Winterfell",
+      "province": "North Island",
+      "country": "Westeros",
+      "postal_code": "12345"
     }
-]
+  ]
+}
 ```
 
 #### Get Address by ID for Contact (Auth Required)
@@ -369,11 +419,14 @@ Authorization: <auth_token>
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "street": "123 Main St",
-    "city": "Metropolis",
-    "postal_code": "12345",
-    "contact_id": 1
+    "street": "Kingsroad",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
+  }
 }
 ```
 
@@ -387,18 +440,24 @@ Content-Type: application/json
 ```
 ```json
 {
-    "street": "456 Elm St",
-    "city": "Gotham"
+    "street": "Forbidden Street",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
 }
 ```
 Response
 ```json
 {
+  "data": {
     "id": 1,
-    "street": "456 Elm St",
-    "city": "Gotham",
-    "postal_code": "12345",
-    "contact_id": 1
+    "street": "Forbidden Street",
+    "city": "Winterfell",
+    "province": "North Island",
+    "country": "Westeros",
+    "postal_code": "12345"
+  }
 }
 ```
 
@@ -412,7 +471,7 @@ Authorization: <auth_token>
 Response
 ```json
 {
-    "message": "Address deleted successfully."
+  "data": true
 }
 ```
 
