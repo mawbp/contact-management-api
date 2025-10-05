@@ -95,7 +95,9 @@ Access the API at `http://localhost:8000`.
 
 ## API Specification
 
-### User Registration
+### User Endpoints
+
+#### User Registration
 
 **Request**
 ```
@@ -190,8 +192,9 @@ Authorization: <auth_token>
     "message": "Logged out successfully."
 }
 ```
+### Contact Endpoints
 
-### Create Contact (Auth Required)
+#### Create Contact (Auth Required)
 
 **Request**
 ```
@@ -290,8 +293,9 @@ Authorization: <auth_token>
     "message": "Contact deleted successfully."
 }
 ```
+### Adress Endpoints
 
-### Add Address to Contact (Auth Required)
+#### Add Address to Contact (Auth Required)
 
 **Request**
 ```
