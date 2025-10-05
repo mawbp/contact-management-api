@@ -34,8 +34,7 @@ A simple Laravel project to learn and implement RESTful API concepts.
 
 - CRUD operations for resources
 - Authentication
-- API resource responses
-- Validation and error handling
+API resource response- Validation and error handling
 
 ## Requirements
 
@@ -98,9 +97,9 @@ Access the API at `http://localhost:8000`.
 ### User Endpoints
 Endpoints for user registration, authentication, profile management, and logout. All user-related actions are handled here.
 
-### User Registration
+#### User Registration
 
-**Request**
+Request
 ```
 POST /api/users
 Content-Type: application/json
@@ -112,7 +111,7 @@ Content-Type: application/json
     "password": "yourpassword"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -122,9 +121,9 @@ Content-Type: application/json
 }
 ```
 
-### User Login
+#### User Login
 
-**Request**
+Request
 ```
 POST /api/users/login
 Content-Type: application/json
@@ -135,21 +134,21 @@ Content-Type: application/json
     "password": "yourpassword"
 }
 ```
-**Response**
+Response
 ```json
 {
     "token": "<auth_token>"
 }
 ```
 
-### Get Current User (Auth Required)
+#### Get Current User (Auth Required)
 
-**Request**
+Request
 ```
 GET /api/users/current
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -158,9 +157,9 @@ Authorization: <auth_token>
 }
 ```
 
-### Update Current User (Auth Required)
+#### Update Current User (Auth Required)
 
-**Request**
+Request
 ```
 PATCH /api/users/current
 Authorization: <auth_token>
@@ -171,7 +170,7 @@ Content-Type: application/json
     "name": "Jane Doe"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -180,14 +179,14 @@ Content-Type: application/json
 }
 ```
 
-### Logout (Auth Required)
+#### Logout (Auth Required)
 
-**Request**
+Request
 ```
 DELETE /api/users/logout
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "message": "Logged out successfully."
@@ -198,7 +197,7 @@ Endpoints for managing contacts, including creating, searching, updating, retrie
 
 #### Create Contact (Auth Required)
 
-**Request**
+Request
 ```
 POST /api/contacts
 Authorization: <auth_token>
@@ -211,7 +210,7 @@ Content-Type: application/json
     "email": "alice@example.com"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -222,14 +221,14 @@ Content-Type: application/json
 }
 ```
 
-### List/Search Contacts (Auth Required)
+#### List/Search Contacts (Auth Required)
 
-**Request**
+Request
 ```
 GET /api/contacts
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 [
     {
@@ -241,14 +240,14 @@ Authorization: <auth_token>
 ]
 ```
 
-### Get Contact by ID (Auth Required)
+#### Get Contact by ID (Auth Required)
 
-**Request**
+Request
 ```
 GET /api/contacts/1
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -258,9 +257,9 @@ Authorization: <auth_token>
 }
 ```
 
-### Update Contact by ID (Auth Required)
+#### Update Contact by ID (Auth Required)
 
-**Request**
+Request
 ```
 PUT /api/contacts/1
 Authorization: <auth_token>
@@ -272,7 +271,7 @@ Content-Type: application/json
     "phone": "0987654321"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -282,14 +281,14 @@ Content-Type: application/json
 }
 ```
 
-### Delete Contact by ID (Auth Required)
+#### Delete Contact by ID (Auth Required)
 
-**Request**
+Request
 ```
 DELETE /api/contacts/1
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "message": "Contact deleted successfully."
@@ -300,7 +299,7 @@ Endpoints for managing addresses associated with contacts. Includes adding, list
 
 #### Add Address to Contact (Auth Required)
 
-**Request**
+Request
 ```
 POST /api/contacts/1/addresses
 Authorization: <auth_token>
@@ -313,7 +312,7 @@ Content-Type: application/json
     "postal_code": "12345"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -325,14 +324,14 @@ Content-Type: application/json
 }
 ```
 
-### List Addresses for Contact (Auth Required)
+#### List Addresses for Contact (Auth Required)
 
-**Request**
+Request
 ```
 GET /api/contacts/1/addresses
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 [
     {
@@ -345,14 +344,14 @@ Authorization: <auth_token>
 ]
 ```
 
-### Get Address by ID for Contact (Auth Required)
+#### Get Address by ID for Contact (Auth Required)
 
-**Request**
+Request
 ```
 GET /api/contacts/1/addresses/1
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -363,9 +362,9 @@ Authorization: <auth_token>
 }
 ```
 
-### Update Address by ID for Contact (Auth Required)
+#### Update Address by ID for Contact (Auth Required)
 
-**Request**
+Request
 ```
 PUT /api/contacts/1/addresses/1
 Authorization: <auth_token>
@@ -377,7 +376,7 @@ Content-Type: application/json
     "city": "Gotham"
 }
 ```
-**Response**
+Response
 ```json
 {
     "id": 1,
@@ -388,14 +387,14 @@ Content-Type: application/json
 }
 ```
 
-### Delete Address by ID for Contact (Auth Required)
+#### Delete Address by ID for Contact (Auth Required)
 
-**Request**
+Request
 ```
 DELETE /api/contacts/1/addresses/1
 Authorization: <auth_token>
 ```
-**Response**
+Response
 ```json
 {
     "message": "Address deleted successfully."
